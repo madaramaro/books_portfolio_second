@@ -4,6 +4,6 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
   && apt-get update -qq \
   && apt-get install -y nodejs yarn
 WORKDIR /app
-COPY ./src /app
+COPY . /app
 RUN bundle config --local set path 'vendor/bundle' \
   && bundle install
