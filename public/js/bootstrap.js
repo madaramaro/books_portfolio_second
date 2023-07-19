@@ -43415,7 +43415,7 @@ var __webpack_exports__ = {};
 /*!*************************************!*\
   !*** ./app/javascript/bootstrap.js ***!
   \*************************************/
-indow._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support

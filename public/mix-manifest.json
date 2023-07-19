@@ -2,6 +2,7 @@
     "/js/app.js": "/js/app.js",
     "/js/bootstrap.js": "/js/bootstrap.js",
     "/js/turbo.js": "/js/turbo.js",
+    "/js/application.js": "/js/application.js",
     "/js/app/actioncable.js": "/js/app/actioncable.js",
     "/css/app.css": "/css/app.css"
 }
