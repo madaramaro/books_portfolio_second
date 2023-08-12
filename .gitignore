@@ -33,3 +33,4 @@ node_modules
 
 # Carrierwave
 /public/uploads
+.DS_Store
