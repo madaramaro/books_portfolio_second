@@ -1,0 +1,26 @@
+<%= form_with(url: search_online_books_path, method: :get) do |form| %>
+  <%= form.text_field :keyword %>
+  <%= form.submit "Search Online" %>
+<% end %>
+
+<% if @online_books %>
+  <% @online_books.each do |book| %>
+   <div class="book-result">
+    <h3><%= book["volumeInfo"]["title"] %></h3>
+    <p><%= book["volumeInfo"]["authors"]&.join(', ') %></p>
+    <p><%= book["volumeInfo"]["publisher"] %></p>
+    <p><%= book["volumeInfo"]["publishedDate"] %></p>
+    <%= image_tag book["volumeInfo"]["imageLinks"]["thumbnail"] if book["volumeInfo"]["imageLinks"] %>
+
+    <%= form_with(url: new_book_path, method: :get, html: { class: 'select-book-form' }) do |f| %>
+      <%= f.hidden_field :title, value: book["volumeInfo"]["title"] %>
+      <%= f.hidden_field :author, value: book["volumeInfo"]["authors"]&.join(', ') %>
+      <%= f.hidden_field :publisher, value: book["volumeInfo"]["publisher"] %>
+      <%= f.hidden_field :published_date, value: book["volumeInfo"]["publishedDate"] %>
+      <%= f.hidden_field :image_url, value: book["volumeInfo"]["imageLinks"]["thumbnail"] if book["volumeInfo"]["imageLinks"] %>
+      <!-- 必要な他のフィールドも追加することができます -->
+
+        <%= f.submit "この書籍を選択", class: "btn btn-secondary" %>
+      <% end %> 
+  <% end %>
+<% end %>

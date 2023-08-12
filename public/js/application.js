@@ -7003,7 +7003,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       },
 
       decoder: {
-        readers: ["code_128_reader"]
+        readers: ["ean_reader"]
       }
     }, function (err) {
       if (err) {

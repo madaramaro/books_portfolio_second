@@ -1,0 +1,23 @@
+<h1>New book</h1>
+
+<br>
+<%# オンライン検索フォームの追加 %>
+<div>
+  <%= form_tag(search_online_books_path, method: "get", id: "search_online_form") do%>
+     <%= text_field_tag :keyword, nil, placeholder: "キーワードで検索" %>
+
+    <%# ISBNを格納するための隠しフィールド %>
+    <%= hidden_field_tag :isbn, nil, id: 'isbn_hidden_field' %>
+  
+     <%= submit_tag "検索", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<%= render "form", book: @book %>
+
+<br>
+
+<div>
+  <%= link_to "Back to books", books_path %>
+  <div id="scanner"></div>
+</div>
