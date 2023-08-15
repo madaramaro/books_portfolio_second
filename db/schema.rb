@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_11_232300) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_15_000403) do
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -49,6 +49,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_11_232300) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image_url"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_books_on_user_id"
+  end
+
+  create_table "favorite_list_items", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "favorite_list_id", null: false
+    t.bigint "book_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_favorite_list_items_on_book_id"
+    t.index ["favorite_list_id"], name: "index_favorite_list_items_on_favorite_list_id"
+  end
+
+  create_table "favorite_lists", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -67,4 +84,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_11_232300) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "books", "users"
+  add_foreign_key "favorite_list_items", "books"
+  add_foreign_key "favorite_list_items", "favorite_lists"
 end

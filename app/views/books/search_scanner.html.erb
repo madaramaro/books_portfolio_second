@@ -1,0 +1,94 @@
+<h1>New book</h1>
+
+<%= form_for @book do |f| %>
+  <%# フォームの詳細部分を表示する部分 %>
+  <div>
+    <%= f.text_field :title, placeholder: "Title", id: "book-title-input" %>
+    <%= f.text_field :author, placeholder: "Author", id: "book-author-input" %>
+    <%= f.text_field :publisher, placeholder: "Publisher", id: "book-publisher-input" %>
+    <%= f.text_field :published_date, placeholder: "Published Date", id: "book-published-date-input" %>
+    <%= f.hidden_field :image_url, id: "book-image-url-input" %>
+  </div>
+  
+  <div>
+    <img id="book-cover" src="" alt="Book Cover" style="max-width: 200px; display: none;">
+  </div>
+
+  <div>
+    <%= f.submit "登録", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<br>
+
+<div>
+  <%= link_to "Back to books", books_path %>
+  <div id="scanner"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/quagga@0.12.1/dist/quagga.min.js"></script>
+<script>
+  function setBookDetailsToForm(details) {
+    document.getElementById('book-title-input').value = details.title || '';
+    document.getElementById('book-author-input').value = details.authors ? details.authors.join(', ') : '';
+    document.getElementById('book-publisher-input').value = details.publisher || '';
+    document.getElementById('book-published-date-input').value = details.publishedDate || '';
+    if (details.imageLinks && details.imageLinks.thumbnail) {
+      const bookCover = document.getElementById('book-cover');
+      const imageUrlInput = document.getElementById('book-image-url-input');
+      bookCover.src = details.imageLinks.thumbnail;
+      imageUrlInput.value = details.imageLinks.thumbnail; // カバー画像のURLを隠しフィールドにセット
+      bookCover.style.display = 'block';
+    }
+  }
+
+  function fetchBookDetails(isbn) {
+    const API_ENDPOINT = `https://www.googleapis.com/books/v1/volumes?q=isbn:${isbn}`;
+    fetch(API_ENDPOINT)
+    .then(response => response.json())
+    .then(data => {
+      if (data.totalItems > 0) {
+        const bookDetails = data.items[0].volumeInfo;
+        setBookDetailsToForm(bookDetails);
+      } 
+      // else {
+      //   alert('No book found for the scanned ISBN.');
+      // }
+    })
+    .catch(error => {
+      console.error('Error fetching book details:', error);
+    });
+  }
+
+  if (document.querySelector('#scanner')) {
+    Quagga.init({
+      inputStream: {
+        name: "Live",
+        type: "LiveStream",
+        target: document.querySelector('#scanner')
+      },
+      decoder: {
+        readers: ["ean_reader"]
+      }
+    }, function(err) {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      Quagga.start();
+    });
+
+    Quagga.onDetected(function(result) {
+      try {
+        const isbn = result.codeResult.code;
+        if(isbn.length === 10 || isbn.length === 13) {
+          fetchBookDetails(isbn);
+        } else {
+          console.log('Scanned barcode is not a valid ISBN:', isbn);
+        }
+      } catch (error) {
+        console.error('Error during detection:', error);
+      }
+    });
+  }
+</script>

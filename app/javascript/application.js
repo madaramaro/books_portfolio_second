@@ -1,4 +1,7 @@
-document.addEventListener("DOMContentLoaded", (event) => {
+import * as Quagga from 'quagga';
+
+// document.addEventListener("DOMContentLoaded", (event) => {
+  function loadFunction() {
   let isProcessed = false; // フラグを追加
 
   if (document.querySelector('#scanner')) {
@@ -54,3 +57,5 @@ document.addEventListener("DOMContentLoaded", (event) => {
     
   }
 });
+// 新たに追加
+document.addEventListener("turbo:load", loadFunction); 

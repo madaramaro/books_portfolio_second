@@ -1,0 +1,14 @@
+<h1>リストを作成</h1>
+<%= form_for @favorite_list do |f| %>
+  <p>
+    <%= f.label :name, "List Name" %>
+    <%= f.text_field :name %>
+  </p>
+  
+  <h2>リストから選択</h2>
+  <% @books.each do |book| %>
+    <%= render partial: 'books/book_selection', locals: { book: book, form: f } %>
+  <% end %>
+
+  <%= f.submit "登録" %>
+<% end %>

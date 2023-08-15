@@ -13,6 +13,8 @@ module App
 
     config.i18n.default_locale = :ja
     config.time_zone = "Tokyo"
+    config.assets.enabled = true
+    config.assets.paths << Rails.root.join("vendor", "assets", "stylesheets", "bootstrap")
 
     # Configuration for the application, engines, and railties goes here.
     #

@@ -1,0 +1,14 @@
+<h1>お気に入りリスト一覧</h1>
+
+<p>リストを選択してください:</p>
+
+<select id="favorite_list_select">
+  <option value="">-- リストを選択 --</option>
+  <% @favorite_lists.each do |favorite_list| %>
+    <option value="<%= favorite_list.id %>">
+      <%= favorite_list.name %>
+    </option>
+  <% end %>
+</select>
+
+<div id="favorite_list_details"></div>

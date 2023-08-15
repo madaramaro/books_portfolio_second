@@ -1,0 +1,36 @@
+<div id="<%= dom_id book %>">
+  <%= form.check_box :book_ids, { multiple: true }, book.id, nil %>
+  
+  <p>
+    <% if book.image_url.present? %>
+      <%= image_tag book.image_url, alt: book.title, class: 'book-image' %>
+    <% end %>
+    <strong>Title:</strong>
+    <%= book.title %>
+  </p>
+
+  <p>
+    <strong>Author:</strong>
+    <%= book.author %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= book.description %>
+  </p>
+
+  <p>
+    <strong>Recommended:</strong>
+    <%= book.recommended %>
+  </p>
+
+  <p>
+    <strong>Publisher:</strong>
+    <%= book.publisher %>
+  </p>
+
+  <p>
+    <strong>Published date:</strong>
+    <%= book.published_date %>
+  </p>
+</div>

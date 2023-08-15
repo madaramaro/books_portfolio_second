@@ -5,8 +5,8 @@
 //@import 'variables';
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
-@import "setting/general";
+@import 'bootstrap/bootstrap';
+@import 'setting/general';
 // 以下を追記
-@import "hamburger-menu";
-@import "device";
+@import 'hamburger-menu';
+@import 'device';

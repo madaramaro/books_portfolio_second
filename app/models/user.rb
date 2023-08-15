@@ -9,4 +9,7 @@ class User < ApplicationRecord
 
   # ActiveStorageの関連付け
   has_one_attached :avatar
+
+  # Books association
+  has_many :books
 end

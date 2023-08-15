@@ -6,7 +6,12 @@ Rails.application.routes.draw do
   resources :books do
     collection do
       get 'search_online'
+      get 'search_scanner'
     end
+  end
+
+  resources :favorite_lists do
+    post 'add_book', on: :member
   end
 
   get 'users/show', to: 'users#show', as: :custom_show_users

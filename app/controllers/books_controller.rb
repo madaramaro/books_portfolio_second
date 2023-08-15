@@ -1,4 +1,4 @@
-require 'httparty'
+require 'rest-client'  # HTTPartyを使用せずRestClientを使用する場合
 require 'cgi'  # 日本語（非ASCII文字）のため
 
 class BooksController < ApplicationController
@@ -8,7 +8,7 @@ class BooksController < ApplicationController
 
   # GET /books or /books.json
   def index
-    @books = Book.all
+    @books = current_user.books
   end
 
   # GET /books/1 or /books/1.json
@@ -16,7 +16,7 @@ class BooksController < ApplicationController
 
   # GET /books/new
   def new
-    @book = Book.new(book_params_from_search)
+    @book = Book.new
   end
 
   # GET /books/1/edit
@@ -24,7 +24,7 @@ class BooksController < ApplicationController
 
   # POST /books or /books.json
   def create
-    @book = Book.new(book_params)
+    @book = current_user.books.build(book_params)
 
     respond_to do |format|
       if @book.save
@@ -74,9 +74,14 @@ class BooksController < ApplicationController
     # キーワードベースの検索
     elsif params[:keyword].present?
       encoded_keyword = CGI.escape(params[:keyword])
-      response = HTTParty.get("#{BASE_URL}#{encoded_keyword}")
-      @online_books = response.parsed_response["items"]
+      response = RestClient.get("#{BASE_URL}#{encoded_keyword}")
+      @online_books = JSON.parse(response.body)["items"]
     end
+  end
+
+  # search_scannerの設定
+  def search_scanner
+    @book = Book.new
   end
     
   private
