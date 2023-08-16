@@ -13,6 +13,7 @@
     <!-- turbo.jsを追加します -->
   <script src="<%= mix('/js/turbo.js') %>"></script>
   <%= javascript_include_tag 'favorite_lists' %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
   <body>

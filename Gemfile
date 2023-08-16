@@ -61,7 +61,7 @@ gem 'httparty'
 gem 'rest-client'
 
 # javascript
-gem 'webpacker'
+# gem 'webpacker'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -86,3 +86,5 @@ group :test do
   gem "webdrivers"
 end
 gem 'devise'
+
+gem "jsbundling-rails", "~> 1.1"

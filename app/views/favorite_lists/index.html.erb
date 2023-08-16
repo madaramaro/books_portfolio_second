@@ -11,4 +11,15 @@
   <% end %>
 </select>
 
-<div id="favorite_list_details"></div>
+<script>
+  // jQueryを使う場合
+  $(document).ready(function(){
+    $('#favorite_list_select').on('change', function(){
+      var listId = $(this).val();
+      
+      if (listId) {
+        window.location.href = "/favorite_lists/" + listId;
+      }
+    });
+  });
+</script>

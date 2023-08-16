@@ -9,6 +9,8 @@ class BooksController < ApplicationController
   # GET /books or /books.json
   def index
     @books = current_user.books
+    @favorite_lists = current_user.favorite_lists
+
   end
 
   # GET /books/1 or /books/1.json
@@ -16,8 +18,19 @@ class BooksController < ApplicationController
 
   # GET /books/new
   def new
-    @book = Book.new
+    if params[:title]
+      @book = Book.new(
+        title: params[:title],
+        author: params[:author],
+        publisher: params[:publisher],
+        published_date: params[:published_date],
+        image_url: params[:image_url]
+      )
+    else
+      @book = Book.new
+    end
   end
+  
 
   # GET /books/1/edit
   def edit; end

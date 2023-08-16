@@ -1,6 +1,46 @@
 <h1><%= @favorite_list.name %></h1>
 <ul>
 <% @favorite_list.books.each do |book| %>
-  <li><%= book.title %></li>
+  <li>
+    <div>
+      <p>
+        <% if book.image_url.present? %>
+          <%= image_tag book.image_url, alt: book.title, class: 'book-image' %>
+        <% end %>
+        <strong>Title:</strong>
+        <%= book.title %>
+      </p>
+
+      <p>
+        <strong>Author:</strong>
+        <%= book.author %>
+      </p>
+
+      <p>
+        <strong>Description:</strong>
+        <%= book.description %>
+      </p>
+
+      <p>
+        <strong>Recommended:</strong>
+        <%= book.recommended %>
+      </p>
+
+      <p>
+        <strong>Publisher:</strong>
+        <%= book.publisher %>
+      </p>
+
+      <p>
+        <strong>Published date:</strong>
+        <%= book.published_date %>
+      </p>
+
+      <!-- お気に入りリストからの本の削除ボタンを追加 -->
+      <p>
+        <%= link_to 'Delete from favorites', remove_book_favorite_list_path(@favorite_list, book_id: book.id), method: :delete, data: { confirm: 'Are you sure you want to remove this book from your favorites?' } %>
+      </p>
+    </div>
+  </li>
 <% end %>
 </ul>

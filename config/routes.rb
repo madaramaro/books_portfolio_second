@@ -12,6 +12,13 @@ Rails.application.routes.draw do
 
   resources :favorite_lists do
     post 'add_book', on: :member
+
+    # お気に入りリストに関連する本の一覧のためのルーティングを追加
+    get 'books', on: :member
+
+    # お気に入りリストから本を削除するためのルーティングを追加
+    delete 'remove_book/:book_id', to: 'favorite_lists#remove_book', on: :member, as: :remove_book
+
   end
 
   get 'users/show', to: 'users#show', as: :custom_show_users
