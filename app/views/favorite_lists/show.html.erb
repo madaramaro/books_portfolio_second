@@ -35,12 +35,13 @@
         <strong>Published date:</strong>
         <%= book.published_date %>
       </p>
-
-      <!-- お気に入りリストからの本の削除ボタンを追加 -->
-      <p>
-        <%= link_to 'Delete from favorites', remove_book_favorite_list_path(@favorite_list, book_id: book.id), method: :delete, data: { confirm: 'Are you sure you want to remove this book from your favorites?' } %>
-      </p>
     </div>
   </li>
 <% end %>
 </ul>
+ 
+ <!-- リストの最後にボタンを設置 -->
+ <div class="list-actions">
+    <%= link_to '戻る', favorite_lists_path, class: 'btn btn-primary'%> 
+    <%= button_to '削除', favorite_list_path(@favorite_list), method: :delete, data: { confirm: 'この本をお気に入りから削除してもよろしいですか？' }, class: 'btn btn-danger' %>
+ </div>

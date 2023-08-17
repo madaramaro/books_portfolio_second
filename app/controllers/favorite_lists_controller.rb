@@ -25,7 +25,7 @@ class FavoriteListsController < ApplicationController
   end
 
   def index 
-    @favorite_lists = FavoriteList.all 
+    @favorite_lists = current_user.favorite_lists
   end
 
   def add_book
