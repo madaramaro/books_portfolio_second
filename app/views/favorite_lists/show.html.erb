@@ -42,6 +42,7 @@
  
  <!-- リストの最後にボタンを設置 -->
  <div class="list-actions">
-    <%= link_to '戻る', favorite_lists_path, class: 'btn btn-primary'%> 
+    <%= link_to '戻る', favorite_lists_path, class: 'btn btn-primary'%>  
+    <%= link_to '編集', edit_favorite_list_path(@favorite_list), class: 'btn btn-warning'%>
     <%= button_to '削除', favorite_list_path(@favorite_list), method: :delete, data: { confirm: 'この本をお気に入りから削除してもよろしいですか？' }, class: 'btn btn-danger' %>
  </div>

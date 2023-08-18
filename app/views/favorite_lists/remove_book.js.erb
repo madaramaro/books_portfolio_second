@@ -1,0 +1,5 @@
+
+$(`#books-list div[data-book-id="<%= j @book.id %>"]`).remove();
+
+// ページをリロード
+window.location.reload(true);

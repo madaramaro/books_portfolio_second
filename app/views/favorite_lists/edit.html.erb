@@ -1,0 +1,55 @@
+<%= form_for @favorite_list do |f| %>
+  <!-- リスト名の編集 -->
+  <h1>Edit List Name</h1>
+  <%= f.label :name, "List Name:" %>
+  <%= f.text_field :name %>
+  <br><br>
+
+  <!-- リスト内の本の一覧表示と削除機能 -->
+  <h2>Books in the list:</h2>
+  <% @favorite_list.books.each do |book| %>
+    <div>
+      <p>
+        <% if book.image_url.present? %>
+          <%= image_tag book.image_url, alt: book.title, class: 'book-image' %>
+        <% end %>
+        <strong>Title:</strong> <%= book.title %>
+      </p>
+
+      <p>
+        <strong>Author:</strong> <%= book.author %>
+      </p>
+
+      <p>
+        <strong>Description:</strong> <%= book.description %>
+      </p>
+
+      <p>
+        <strong>Recommended:</strong> <%= book.recommended %>
+      </p>
+
+      <p>
+        <strong>Publisher:</strong> <%= book.publisher %>
+      </p>
+
+      <p>
+        <strong>Published date:</strong> <%= book.published_date %>
+      </p>
+
+      <%= link_to 'Remove from list', remove_book_favorite_list_path(@favorite_list, book_id: book.id), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "remove-book-link" %>
+      <hr>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Update List", class: 'btn btn-success' %>
+    <%= link_to '戻る', favorite_lists_path, class: 'btn btn-primary'%>  
+  </div>
+<% end %>
+
+<!-- リストに新しい本を追加するためのドロップダウンメニュー -->
+<h2>Add a book to the list:</h2>
+<%= form_with url: add_book_favorite_list_path(@favorite_list), method: :post, local: false, id: "add-book-form" do |form| %>
+  <%= form.collection_select :book_id, Book.all, :id, :title, prompt: "Choose a book" %>
+  <%= form.submit 'Add to list', class: 'btn btn-primary' %>
+<% end %>

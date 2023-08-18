@@ -13,5 +13,5 @@ class User < ApplicationRecord
   # Books association
   has_many :books
 
-  has_many :favorite_lists
+  has_many :favorite_lists, dependent: :destroy
 end

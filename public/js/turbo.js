@@ -1,19 +1,19 @@
-/******/ (() => { // webpackBootstrap
+/******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./node_modules/@hotwired/turbo-rails/app/javascript/turbo/cable.js":
 /*!**************************************************************************!*\
   !*** ./node_modules/@hotwired/turbo-rails/app/javascript/turbo/cable.js ***!
   \**************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   createConsumer: () => (/* binding */ createConsumer),
-/* harmony export */   getConsumer: () => (/* binding */ getConsumer),
-/* harmony export */   setConsumer: () => (/* binding */ setConsumer),
-/* harmony export */   subscribeTo: () => (/* binding */ subscribeTo)
+/* harmony export */   createConsumer: function() { return /* binding */ createConsumer; },
+/* harmony export */   getConsumer: function() { return /* binding */ getConsumer; },
+/* harmony export */   setConsumer: function() { return /* binding */ setConsumer; },
+/* harmony export */   subscribeTo: function() { return /* binding */ subscribeTo; }
 /* harmony export */ });
 let consumer
 
@@ -42,7 +42,7 @@ async function subscribeTo(channel, mixin) {
 /*!************************************************************************************************!*\
   !*** ./node_modules/@hotwired/turbo-rails/app/javascript/turbo/cable_stream_source_element.js ***!
   \************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -100,12 +100,12 @@ if (customElements.get("turbo-cable-stream-source") === undefined) {
 /*!***********************************************************************************!*\
   !*** ./node_modules/@hotwired/turbo-rails/app/javascript/turbo/fetch_requests.js ***!
   \***********************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   encodeMethodIntoRequestBody: () => (/* binding */ encodeMethodIntoRequestBody)
+/* harmony export */   encodeMethodIntoRequestBody: function() { return /* binding */ encodeMethodIntoRequestBody; }
 /* harmony export */ });
 function encodeMethodIntoRequestBody(event) {
   if (event.target instanceof HTMLFormElement) {
@@ -165,13 +165,13 @@ function isBodyInit(body) {
 /*!**************************************************************************!*\
   !*** ./node_modules/@hotwired/turbo-rails/app/javascript/turbo/index.js ***!
   \**************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Turbo: () => (/* reexport module object */ _hotwired_turbo__WEBPACK_IMPORTED_MODULE_1__),
-/* harmony export */   cable: () => (/* reexport module object */ _cable__WEBPACK_IMPORTED_MODULE_2__)
+/* harmony export */   Turbo: function() { return /* reexport module object */ _hotwired_turbo__WEBPACK_IMPORTED_MODULE_1__; },
+/* harmony export */   cable: function() { return /* reexport module object */ _cable__WEBPACK_IMPORTED_MODULE_2__; }
 /* harmony export */ });
 /* harmony import */ var _cable_stream_source_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./cable_stream_source_element */ "./node_modules/@hotwired/turbo-rails/app/javascript/turbo/cable_stream_source_element.js");
 /* harmony import */ var _hotwired_turbo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @hotwired/turbo */ "./node_modules/@hotwired/turbo/dist/turbo.es2017-esm.js");
@@ -196,12 +196,12 @@ addEventListener("turbo:before-fetch-request", _fetch_requests__WEBPACK_IMPORTED
 /*!*****************************************************************************!*\
   !*** ./node_modules/@hotwired/turbo-rails/app/javascript/turbo/snakeize.js ***!
   \*****************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ walk)
+/* harmony export */   "default": function() { return /* binding */ walk; }
 /* harmony export */ });
 // Based on https://github.com/nathan7/snakeize
 //
@@ -241,32 +241,32 @@ function walk (obj) {
 /*!***************************************************************!*\
   !*** ./node_modules/@hotwired/turbo/dist/turbo.es2017-esm.js ***!
   \***************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   FrameElement: () => (/* binding */ FrameElement),
-/* harmony export */   FrameLoadingStyle: () => (/* binding */ FrameLoadingStyle),
-/* harmony export */   FrameRenderer: () => (/* binding */ FrameRenderer),
-/* harmony export */   PageRenderer: () => (/* binding */ PageRenderer),
-/* harmony export */   PageSnapshot: () => (/* binding */ PageSnapshot),
-/* harmony export */   StreamActions: () => (/* binding */ StreamActions),
-/* harmony export */   StreamElement: () => (/* binding */ StreamElement),
-/* harmony export */   StreamSourceElement: () => (/* binding */ StreamSourceElement),
-/* harmony export */   cache: () => (/* binding */ cache),
-/* harmony export */   clearCache: () => (/* binding */ clearCache),
-/* harmony export */   connectStreamSource: () => (/* binding */ connectStreamSource),
-/* harmony export */   disconnectStreamSource: () => (/* binding */ disconnectStreamSource),
-/* harmony export */   navigator: () => (/* binding */ navigator$1),
-/* harmony export */   registerAdapter: () => (/* binding */ registerAdapter),
-/* harmony export */   renderStreamMessage: () => (/* binding */ renderStreamMessage),
-/* harmony export */   session: () => (/* binding */ session),
-/* harmony export */   setConfirmMethod: () => (/* binding */ setConfirmMethod),
-/* harmony export */   setFormMode: () => (/* binding */ setFormMode),
-/* harmony export */   setProgressBarDelay: () => (/* binding */ setProgressBarDelay),
-/* harmony export */   start: () => (/* binding */ start),
-/* harmony export */   visit: () => (/* binding */ visit)
+/* harmony export */   FrameElement: function() { return /* binding */ FrameElement; },
+/* harmony export */   FrameLoadingStyle: function() { return /* binding */ FrameLoadingStyle; },
+/* harmony export */   FrameRenderer: function() { return /* binding */ FrameRenderer; },
+/* harmony export */   PageRenderer: function() { return /* binding */ PageRenderer; },
+/* harmony export */   PageSnapshot: function() { return /* binding */ PageSnapshot; },
+/* harmony export */   StreamActions: function() { return /* binding */ StreamActions; },
+/* harmony export */   StreamElement: function() { return /* binding */ StreamElement; },
+/* harmony export */   StreamSourceElement: function() { return /* binding */ StreamSourceElement; },
+/* harmony export */   cache: function() { return /* binding */ cache; },
+/* harmony export */   clearCache: function() { return /* binding */ clearCache; },
+/* harmony export */   connectStreamSource: function() { return /* binding */ connectStreamSource; },
+/* harmony export */   disconnectStreamSource: function() { return /* binding */ disconnectStreamSource; },
+/* harmony export */   navigator: function() { return /* binding */ navigator$1; },
+/* harmony export */   registerAdapter: function() { return /* binding */ registerAdapter; },
+/* harmony export */   renderStreamMessage: function() { return /* binding */ renderStreamMessage; },
+/* harmony export */   session: function() { return /* binding */ session; },
+/* harmony export */   setConfirmMethod: function() { return /* binding */ setConfirmMethod; },
+/* harmony export */   setFormMode: function() { return /* binding */ setFormMode; },
+/* harmony export */   setProgressBarDelay: function() { return /* binding */ setProgressBarDelay; },
+/* harmony export */   start: function() { return /* binding */ start; },
+/* harmony export */   visit: function() { return /* binding */ visit; }
 /* harmony export */ });
 /*
 Turbo 7.3.0
@@ -5063,73 +5063,73 @@ Released under the MIT license
 /******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
+/******/ 	!function() {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
+/******/ 		__webpack_require__.n = function(module) {
 /******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
+/******/ 				function() { return module['default']; } :
+/******/ 				function() { return module; };
 /******/ 			__webpack_require__.d(getter, { a: getter });
 /******/ 			return getter;
 /******/ 		};
-/******/ 	})();
+/******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
+/******/ 	!function() {
 /******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 		__webpack_require__.d = function(exports, definition) {
 /******/ 			for(var key in definition) {
 /******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
 /******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
 /******/ 				}
 /******/ 			}
 /******/ 		};
-/******/ 	})();
+/******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/ensure chunk */
-/******/ 	(() => {
+/******/ 	!function() {
 /******/ 		__webpack_require__.f = {};
 /******/ 		// This file contains only the entry chunk.
 /******/ 		// The chunk loading function for additional chunks
-/******/ 		__webpack_require__.e = (chunkId) => {
-/******/ 			return Promise.all(Object.keys(__webpack_require__.f).reduce((promises, key) => {
+/******/ 		__webpack_require__.e = function(chunkId) {
+/******/ 			return Promise.all(Object.keys(__webpack_require__.f).reduce(function(promises, key) {
 /******/ 				__webpack_require__.f[key](chunkId, promises);
 /******/ 				return promises;
 /******/ 			}, []));
 /******/ 		};
-/******/ 	})();
+/******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/get javascript chunk filename */
-/******/ 	(() => {
+/******/ 	!function() {
 /******/ 		// This function allow to reference async chunks
-/******/ 		__webpack_require__.u = (chunkId) => {
+/******/ 		__webpack_require__.u = function(chunkId) {
 /******/ 			// return url for filenames not based on template
 /******/ 			if (chunkId === "actioncable") return "js/app/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
-/******/ 	})();
+/******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/get mini-css chunk filename */
-/******/ 	(() => {
+/******/ 	!function() {
 /******/ 		// This function allow to reference all chunks
-/******/ 		__webpack_require__.miniCssF = (chunkId) => {
+/******/ 		__webpack_require__.miniCssF = function(chunkId) {
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
-/******/ 	})();
+/******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ 	})();
+/******/ 	!function() {
+/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/load script */
-/******/ 	(() => {
+/******/ 	!function() {
 /******/ 		var inProgress = {};
-/******/ 		var dataWebpackPrefix = "sns_app:";
+/******/ 		var dataWebpackPrefix = "books_portfolio:";
 /******/ 		// loadScript function to load a script via script tag
-/******/ 		__webpack_require__.l = (url, done, key, chunkId) => {
+/******/ 		__webpack_require__.l = function(url, done, key, chunkId) {
 /******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
 /******/ 			var script, needAttach;
 /******/ 			if(key !== undefined) {
@@ -5153,14 +5153,14 @@ Released under the MIT license
 /******/ 				script.src = url;
 /******/ 			}
 /******/ 			inProgress[url] = [done];
-/******/ 			var onScriptComplete = (prev, event) => {
+/******/ 			var onScriptComplete = function(prev, event) {
 /******/ 				// avoid mem leaks in IE.
 /******/ 				script.onerror = script.onload = null;
 /******/ 				clearTimeout(timeout);
 /******/ 				var doneFns = inProgress[url];
 /******/ 				delete inProgress[url];
 /******/ 				script.parentNode && script.parentNode.removeChild(script);
-/******/ 				doneFns && doneFns.forEach((fn) => (fn(event)));
+/******/ 				doneFns && doneFns.forEach(function(fn) { return fn(event); });
 /******/ 				if(prev) return prev(event);
 /******/ 			}
 /******/ 			var timeout = setTimeout(onScriptComplete.bind(null, undefined, { type: 'timeout', target: script }), 120000);
@@ -5168,26 +5168,26 @@ Released under the MIT license
 /******/ 			script.onload = onScriptComplete.bind(null, script.onload);
 /******/ 			needAttach && document.head.appendChild(script);
 /******/ 		};
-/******/ 	})();
+/******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
+/******/ 	!function() {
 /******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
+/******/ 		__webpack_require__.r = function(exports) {
 /******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
 /******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
-/******/ 	})();
+/******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
-/******/ 	(() => {
+/******/ 	!function() {
 /******/ 		__webpack_require__.p = "/";
-/******/ 	})();
+/******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
-/******/ 	(() => {
+/******/ 	!function() {
 /******/ 		// no baseURI
 /******/ 		
 /******/ 		// object to store loaded and loading chunks
@@ -5197,7 +5197,7 @@ Released under the MIT license
 /******/ 			"/js/turbo": 0
 /******/ 		};
 /******/ 		
-/******/ 		__webpack_require__.f.j = (chunkId, promises) => {
+/******/ 		__webpack_require__.f.j = function(chunkId, promises) {
 /******/ 				// JSONP chunk loading for javascript
 /******/ 				var installedChunkData = __webpack_require__.o(installedChunks, chunkId) ? installedChunks[chunkId] : undefined;
 /******/ 				if(installedChunkData !== 0) { // 0 means "already installed".
@@ -5208,14 +5208,14 @@ Released under the MIT license
 /******/ 					} else {
 /******/ 						if(true) { // all chunks have JS
 /******/ 							// setup Promise in chunk cache
-/******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
+/******/ 							var promise = new Promise(function(resolve, reject) { installedChunkData = installedChunks[chunkId] = [resolve, reject]; });
 /******/ 							promises.push(installedChunkData[2] = promise);
 /******/ 		
 /******/ 							// start chunk loading
 /******/ 							var url = __webpack_require__.p + __webpack_require__.u(chunkId);
 /******/ 							// create error before stack unwound to get useful stacktrace later
 /******/ 							var error = new Error();
-/******/ 							var loadingEnded = (event) => {
+/******/ 							var loadingEnded = function(event) {
 /******/ 								if(__webpack_require__.o(installedChunks, chunkId)) {
 /******/ 									installedChunkData = installedChunks[chunkId];
 /******/ 									if(installedChunkData !== 0) installedChunks[chunkId] = undefined;
@@ -5247,12 +5247,14 @@ Released under the MIT license
 /******/ 		// no on chunks loaded
 /******/ 		
 /******/ 		// install a JSONP callback for chunk loading
-/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
-/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 		var webpackJsonpCallback = function(parentChunkLoadingFunction, data) {
+/******/ 			var chunkIds = data[0];
+/******/ 			var moreModules = data[1];
+/******/ 			var runtime = data[2];
 /******/ 			// add "moreModules" to the modules object,
 /******/ 			// then flag all "chunkIds" as loaded and fire callback
 /******/ 			var moduleId, chunkId, i = 0;
-/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 			if(chunkIds.some(function(id) { return installedChunks[id] !== 0; })) {
 /******/ 				for(moduleId in moreModules) {
 /******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
 /******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
@@ -5271,15 +5273,15 @@ Released under the MIT license
 /******/ 		
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunksns_app"] = self["webpackChunksns_app"] || [];
+/******/ 		var chunkLoadingGlobal = self["webpackChunkbooks_portfolio"] = self["webpackChunkbooks_portfolio"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
-/******/ 	})();
+/******/ 	}();
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
-(() => {
+!function() {
 "use strict";
 /*!*********************************!*\
   !*** ./app/javascript/turbo.js ***!
@@ -5291,7 +5293,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 _rails_ujs__WEBPACK_IMPORTED_MODULE_1___default().start();
-})();
-
+}();
 /******/ })()
 ;

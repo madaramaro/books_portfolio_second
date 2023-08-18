@@ -11,14 +11,18 @@ Rails.application.routes.draw do
   end
 
   resources :favorite_lists do
+    # リストの名前を編集するためのルーティング
+    get 'edit_name', on: :member
+    patch 'update_name', on: :member
+  
+    # お気に入りリストに本を追加するためのルーティング
     post 'add_book', on: :member
-
-    # お気に入りリストに関連する本の一覧のためのルーティングを追加
+  
+    # お気に入りリストの中の本の一覧表示
     get 'books', on: :member
-
-    # お気に入りリストから本を削除するためのルーティングを追加
+  
+    # お気に入りリストから本を削除するためのルーティング
     delete 'remove_book/:book_id', to: 'favorite_lists#remove_book', on: :member, as: :remove_book
-
   end
 
   get 'users/show', to: 'users#show', as: :custom_show_users
