@@ -82,6 +82,16 @@ class FavoriteListsController < ApplicationController
     @favorite_list.destroy
     redirect_to favorite_lists_path, notice: 'リストが正常に削除されました。'
   end
+
+  def post
+    @favorite_list = FavoriteList.find(params[:id])
+    
+    if @favorite_list.update(posted: true)
+      redirect_to favorite_list_path(@favorite_list), notice: 'リストが投稿されました。'
+    else
+      redirect_to favorite_list_path(@favorite_list), alert: 'エラーが発生しました。'
+    end
+  end
   
   private 
 

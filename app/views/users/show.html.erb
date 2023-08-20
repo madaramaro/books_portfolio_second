@@ -11,3 +11,28 @@
 <%= @user.email %>
 <h3>プロフィール</h3>
 <%= @user.profile %>
+<h3>フォロー数</h3>
+<%= link_to @user.following.count, following_user_path(@user) %>
+<h3>フォロワー数</h3>
+<%= link_to @user.followers.count, followers_user_path(@user) %>
+
+<!-- ここからユーザーが投稿したお気に入りリストの表示を始めます -->
+<h1><%= @user.name %>の投稿したお気に入りリスト</h1>
+
+<% @posted_favorite_lists.each do |list| %>
+  <div class="favorite-list">
+    <h2>
+     <%= link_to list.name, posts_path %>
+    </h2>
+    <p>Posted on: <%= list.created_at.strftime('%Y-%m-%d %H:%M:%S') %></p>
+
+    <ul>
+      <% list.books.each do |book| %>
+        <li>
+          <strong>Title:</strong> <%= book.title %>
+          <!-- ここにさらに本の詳細情報を追加できます -->
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

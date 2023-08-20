@@ -1,0 +1,54 @@
+<h1>Posted Favorite Lists</h1>
+
+<%= form_with url: posts_path, method: :get, local: true do %>
+  <%= label_tag :search, "キーワード検索:" %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "検索", name: nil %>
+<% end %>
+
+<% @posted_favorite_lists.each do |list| %>
+  <h2>
+    <%= list.name %> 
+    (Posted by: <%= list.user.name %> 
+    <% unless current_user.following.include?(list.user) %>
+      <%= link_to 'Follow', follow_user_path(list.user), method: :post %>
+    <% else %>
+      <%= link_to 'Unfollow', unfollow_user_path(list.user), method: :delete %>
+    <% end %> 
+    at <%= list.created_at.strftime('%Y-%m-%d %H:%M:%S') %>)
+  </h2>
+  <ul>
+    <% list.books.each do |book| %>
+      <li>
+        <div>
+          <p>
+            <% if book.image_url.present? %>
+              <%= image_tag book.image_url, alt: book.title, class: 'book-image' %>
+            <% end %>
+            <strong>Title:</strong> <%= book.title %>
+          </p>
+
+          <p>
+            <strong>Author:</strong> <%= book.author %>
+          </p>
+
+          <p>
+            <strong>Description:</strong> <%= book.description %>
+          </p>
+
+          <p>
+            <strong>Recommended:</strong> <%= book.recommended %>
+          </p>
+
+          <p>
+            <strong>Publisher:</strong> <%= book.publisher %>
+          </p>
+
+          <p>
+            <strong>Published date:</strong> <%= book.published_date %>
+          </p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

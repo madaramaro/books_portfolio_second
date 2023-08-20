@@ -37,6 +37,9 @@
               <%= link_to "書籍一覧", "/", class: "nav-link" %>
             </li>
             <li>
+              <%= link_to "投稿一覧", posts_path, class: "nav-link" %>
+            </li>
+            <li>
               <%= link_to "キーワードでさがす", new_book_path, class: "nav-link" %>
             </li>
             <li>
@@ -49,10 +52,10 @@
               <%= link_to "リストを表示", favorite_lists_path, class: "nav-link" %>
             </li>
             <li>
-              <%= link_to "ユーザー情報", custom_show_users_path, class: "nav-link" %>
+              <%= link_to "ユーザー情報", user_path(current_user), class: "nav-link" %>
             </li>
             <li>
-              <%= link_to "ユーザー情報編集", custom_edit_users_path, class: "nav-link" %>
+              <%= link_to "ユーザー情報編集", edit_user_path(current_user), class: "nav-link" %>
             </li>
 
           <% else %>
