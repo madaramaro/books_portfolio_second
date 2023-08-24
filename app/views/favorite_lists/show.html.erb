@@ -1,4 +1,8 @@
 <h1><%= @favorite_list.name %></h1>
+<p>
+   <strong>リストの説明:</strong>
+   <%= @favorite_list.description %>
+ </p>
 <ul>
 <% @favorite_list.books.each do |book| %>
   <li>

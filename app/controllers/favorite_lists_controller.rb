@@ -96,7 +96,7 @@ class FavoriteListsController < ApplicationController
   private 
 
   def favorite_list_params
-    params.require(:favorite_list).permit(:name, book_ids: [], books_attributes: [:id, :title, :author, :description, :recommended, :publisher, :published_date, :image_url])
+    params.require(:favorite_list).permit(:name, :description, book_ids: [], books_attributes: [:id, :title, :author, :description, :recommended, :publisher, :published_date, :image_url])
   end
 
 end

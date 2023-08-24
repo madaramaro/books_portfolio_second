@@ -22,19 +22,22 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     
     if current_user.follow(@user)
-      redirect_to @user, notice: 'フォローしました'
+      # フォロー成功時のリダイレクト先を変更
+      redirect_to posts_path, notice: "#{@user.name}をフォローしました。"
     else
-      redirect_to @user, alert: '自分自身をフォローすることはできません'
+      # フォロー失敗時のリダイレクト先も変更
+      redirect_to posts_path, alert: '自分自身をフォローすることはできません'
     end
+    
   end
   
   def unfollow
     @user = User.find(params[:id])
     
     current_user.unfollow(@user)
-    redirect_to @user, notice: 'フォローを解除しました'
+    # フォロー解除後のリダイレクト先を変更
+    redirect_to posts_path, notice: "#{@user.name}のフォローを解除しました。"
   end
-  
 
   def following
     @user = User.find(params[:id])

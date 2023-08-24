@@ -22,7 +22,7 @@
 <% @posted_favorite_lists.each do |list| %>
   <div class="favorite-list">
     <h2>
-     <%= link_to list.name, posts_path %>
+     <%= link_to list.name, post_path(list) %> 
     </h2>
     <p>Posted on: <%= list.created_at.strftime('%Y-%m-%d %H:%M:%S') %></p>
 

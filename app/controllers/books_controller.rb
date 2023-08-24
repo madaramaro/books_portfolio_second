@@ -8,7 +8,7 @@ class BooksController < ApplicationController
 
   # GET /books or /books.json
   def index
-    @books = current_user.books
+    @books = current_user.books.distinct
     @favorite_lists = current_user.favorite_lists
 
   end

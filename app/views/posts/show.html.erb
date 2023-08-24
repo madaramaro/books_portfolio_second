@@ -1,0 +1,48 @@
+<h1><%= @favorite_list.name %></h1>
+ <strong>リストの説明:</strong>
+   <%= @favorite_list.description %>
+ <ul>
+ <% @favorite_list.books.each do |book| %>
+   <li>
+     <div>
+       <p>
+         <% if book.image_url.present? %>
+           <%= image_tag book.image_url, alt: book.title, class: 'book-image' %>
+         <% end %>
+         <strong>Title:</strong>
+         <%= book.title %>
+       </p>
+
+       <p>
+         <strong>Author:</strong>
+         <%= book.author %>
+       </p>
+
+       <p>
+         <strong>Description:</strong>
+         <%= book.description %>
+       </p>
+
+       <p>
+         <strong>Recommended:</strong>
+         <%= book.recommended %>
+       </p>
+
+       <p>
+         <strong>Publisher:</strong>
+         <%= book.publisher %>
+       </p>
+
+       <p>
+         <strong>Published date:</strong>
+         <%= book.published_date %>
+       </p>
+     </div>
+   </li>
+ <% end %>
+ </ul>
+
+ <!-- リストの最後にボタンを設置 -->
+ <div class="list-actions">
+   <%= link_to '戻る', posts_path, class: 'btn btn-primary' %>  
+ </div>

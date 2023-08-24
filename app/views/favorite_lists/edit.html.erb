@@ -5,6 +5,12 @@
   <%= f.text_field :name %>
   <br><br>
 
+  <!-- リストの説明の編集 -->
+   <h2>Edit List Description</h2>
+   <%= f.label :description, "List Description:" %>
+   <%= f.text_area :description, rows: 5, placeholder: "リストの詳しい説明をこちらに入力してください。" %>
+   <br><br>
+
   <!-- リスト内の本の一覧表示と削除機能 -->
   <h2>Books in the list:</h2>
   <% @favorite_list.books.each do |book| %>

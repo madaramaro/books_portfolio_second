@@ -5,6 +5,12 @@
     <%= f.text_field :name %>
   </p>
   
+  <!-- リストの説明の編集 -->
+   <h2>Edit List Description</h2>
+   <%= f.label :description, "List Description:" %>
+   <%= f.text_area :description, rows: 5, placeholder: "リストの詳しい説明をこちらに入力してください。" %>
+   <br><br>
+
   <h2>リストから選択</h2>
   <% @books.each do |book| %>
     <%= render partial: 'books/book_selection', locals: { book: book, form: f } %>

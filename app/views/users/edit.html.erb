@@ -1,0 +1,42 @@
+<h1>プロフィールを編集</h1>
+
+<%= form_for @user do |f| %>
+
+  <%# アバターの編集 %>
+  <div class="field">
+    <%= f.label :avatar, "アバター" %><br>
+    <% if @user.avatar.attached? %>
+      <%= image_tag url_for(@user.avatar), alt: 'User Avatar', style: "max-width: 200px;" %>
+    <% else %>
+      <%= image_tag "watermark.jpeg", alt: 'Default Avatar', style: "max-width: 200px;" %>
+    <% end %>
+    <br>
+    <%= f.file_field :avatar %>
+    <small>新しい画像を選択してアップロードしてください。選択しなかった場合は現在の画像が保持されます。</small>
+  </div>
+
+  <%# ユーザー名の編集 %>
+  <div class="field">
+    <%= f.label :name, "ユーザー名" %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <%# メールアドレスの編集 %>
+  <div class="field">
+    <%= f.label :email, "メールアドレス" %><br>
+    <%= f.text_field :email %>
+  </div>
+
+  <%# プロフィールの編集 %>
+  <div class="field">
+    <%= f.label :profile, "プロフィール" %><br>
+    <%= f.text_area :profile, rows: 5 %>
+  </div>
+
+  <%# フォームの送信ボタン %>
+  <div class="actions">
+    <%= f.submit "変更を保存" %>
+  </div>
+<% end %>
+
+<%= link_to 'キャンセル', user_path(@user) %>

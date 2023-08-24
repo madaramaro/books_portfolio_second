@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'books#index'
+  root to: 'posts#index'
   
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
@@ -30,5 +30,5 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :posts, only: [:index]
+  resources :posts, only: [:index, :show]
 end
